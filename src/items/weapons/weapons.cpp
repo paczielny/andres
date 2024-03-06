@@ -221,6 +221,7 @@ void Weapon::internalUseWeapon(std::shared_ptr<Player> player, std::shared_ptr<I
 		} else {
 			damage.origin = ORIGIN_MELEE;
 		}
+
 		damage.primary.type = params.combatType;
 		damage.primary.value = (getWeaponDamage(player, target, item) * damageModifier) / 100;
 		g_logger().debug("[1] Weapon::internalUseWeapon - primary damage: {}", damage.primary.value);
@@ -250,6 +251,7 @@ void Weapon::internalUseWeapon(std::shared_ptr<Player> player, std::shared_ptr<I
 		} else {
 			Combat::doCombatHealth(player, target, damage, params);
 		}
+
 		g_logger().debug("Weapon::internalUseWeapon - cpp callback executed.");
 	}
 
