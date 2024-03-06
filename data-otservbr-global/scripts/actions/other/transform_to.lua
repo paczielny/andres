@@ -460,6 +460,18 @@ local transformItems = {
 	[42349] = 42348, -- opulent floor lamp
 	[42363] = 42364, -- djinn lamp
 	[42365] = 42366, -- djinn lamp
+	[44030] = 44031, -- mask of the defiler
+	[44031] = 44032,
+	[44032] = 44030, 
+	[44033] = 44034, -- mask of the defiler
+	[44034] = 44035,
+	[44035] = 44033,
+	[44051] = 44053, -- duality doll
+	[44052] = 44054,
+	[44055] = 44057, -- dragon spirit
+	[44056] = 44058,
+	[44059] = 44061, -- aylie
+	[44060] = 44062,	
 }
 
 local transformTo = Action()

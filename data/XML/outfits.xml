@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <outfits>
-	<!-- Female -->
+	<!-- Female outfits -->
 	<outfit type="0" looktype="136" name="Citizen" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="137" name="Hunter" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="0" looktype="138" name="Mage" premium="no" unlocked="yes" enabled="yes" />
@@ -117,7 +117,7 @@
 	<outfit type="0" looktype="1676" name="Darklight Evoker" premium="no" unlocked="no" enabled="yes" from="store" />
 	<outfit type="0" looktype="1681" name="Flamefury Mage" premium="no" unlocked="no" enabled="yes" from="store" />
 
-	<!-- Male -->
+	<!-- Male outfits -->
 	<outfit type="1" looktype="128" name="Citizen" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="1" looktype="129" name="Hunter" premium="no" unlocked="yes" enabled="yes" />
 	<outfit type="1" looktype="130" name="Mage" premium="no" unlocked="yes" enabled="yes" />

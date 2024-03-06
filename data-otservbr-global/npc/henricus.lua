@@ -53,30 +53,23 @@ end
 local flaskCost = 1000
 
 local function creatureSayCallback(npc, creature, type, message)
-	local player = Player(creature)
-	local playerId = player:getId()
+    local player = Player(creature)
+    local playerId = player:getId()
 
-	if not npcHandler:checkInteraction(npc, creature) then
-		return false
-	end
+    if not npcHandler:checkInteraction(npc, creature) then
+        return false
+    end
 
-	local missing, totalBlessPrice = Blessings.getInquisitionPrice(player)
+    local missing, totalBlessPrice = Blessings.getInquisitionPrice(player)
 
-	if MsgContains(message, "inquisitor") then
-		npcHandler:say("The churches of the gods entrusted me with the enormous and responsible task to lead the inquisition. I leave the field work to inquisitors who I recruit from fitting people that cross my way.", npc, creature)
-	elseif MsgContains(message, "join") then
-		if player:getStorageValue(Storage.TheInquisition.Questline) < 1 then
-			npcHandler:say("Do you want to join the inquisition?", npc, creature)
-			npcHandler:setTopic(playerId, 2)
-		end
-	elseif MsgContains(message, "blessing") or MsgContains(message, "bless") then
-		if player:getStorageValue(Storage.TheInquisition.Questline) == 25 then --if quest is done
-			npcHandler:say("Do you want to receive the blessing of the inquisition - which means " .. (missing == 5 and "all five available" or missing) .. " blessings - for " .. totalBlessPrice .. " gold?", npc, creature)
-			npcHandler:setTopic(playerId, 7)
-		else
-			npcHandler:say("You cannot get this blessing unless you have completed The Inquisition Quest.", npc, creature)
-			npcHandler:setTopic(playerId, 0)
-		end
+    if MsgContains(message, "bless") then
+        if player:isVip() then
+            npcHandler:say("Do you want to receive the blessing of the inquisition - which means all 7 blessings - for " .. totalBlessPrice .. " gold?", npc, creature)
+            npcHandler:setTopic(playerId, 9) -- Use a new topic ID for buying all blessings
+        else
+            npcHandler:say("Do you want to receive the blessing of the inquisition - which means " .. (missing == 5 and "all five available" or missing) .. " blessings - for " .. totalBlessPrice .. " gold?", npc, creature)
+            npcHandler:setTopic(playerId, 7)
+        end
 	elseif MsgContains(message, "flask") or MsgContains(message, "special flask") then
 		if player:getStorageValue(Storage.TheInquisition.Questline) >= 12 then -- give player the ability to purchase the flask.
 			npcHandler:say("Do you want to buy the special flask of holy water for " .. flaskCost .. " gold?", npc, creature)
@@ -362,6 +355,7 @@ keywordHandler:addKeyword({ "inquisitor" }, StdModule.say, { npcHandler = npcHan
 keywordHandler:addKeyword({ "believer" }, StdModule.say, { npcHandler = npcHandler, text = "Belive on the gods and they will show you the path." })
 keywordHandler:addKeyword({ "job" }, StdModule.say, { npcHandler = npcHandler, text = "By edict of the churches I'm the Lord Inquisitor." })
 keywordHandler:addKeyword({ "name" }, StdModule.say, { npcHandler = npcHandler, text = "I'm Henricus, the Lord Inquisitor." })
+keywordHandler:addKeyword({ "bless" }, StdModule.say, { npcHandler = npcHandler, text = "Do you want to receive the blessing of the inquisition - which means all 7 blessings - for {w:110000} gold?", automaticReplies = false, cost = 110000, condition = function(player) return player:isVip() end, topic = 9 })
 
 npcHandler:setMessage(MESSAGE_GREET, "Greetings, fellow {believer} |PLAYERNAME|!")
 npcHandler:setMessage(MESSAGE_FAREWELL, "Always be on guard, |PLAYERNAME|!")

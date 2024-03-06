@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <items>
 	<!-- Liquids -->
 	<!-- Fluid type 0 is same as water (id="1") -->
@@ -34900,7 +34900,7 @@
 		<attribute key="showduration" value="1"/>
 		<attribute key="showAttributes" value="1"/>
 		<attribute key="absorbpercentphysical" value="10"/>
-		<attribute key="absorbpercentpoison" value="8"/>
+		<attribute key="absorbpercentenergy" value="8"/>
 		<attribute key="duration" value="3600"/>
 		<attribute key="transformdeequipto" value="16114"/>
 		<attribute key="decayTo" value="0"/>
@@ -47069,9 +47069,9 @@ hands of its owner. Granted by TibiaRoyal.com"/>
 		<attribute key="wrapableto" value="23398"/>
 		<attribute key="weight" value="850"/>
 	</item>
-	<item id="23721" article="a" name="gold pouch">
-		<attribute key="description" value="A infinity bag where you can hold coins."/>
-		<attribute key="containersize" value="20"/>
+	<item id="23721" article="a" name="loot pouch">
+		<attribute key="description" value="A infinity bag where you can hold everything."/>
+		<attribute key="containersize" value="40"/>
 		<attribute key="movable" value="0"/>
 	</item>
 	<item id="23722" article="a" name="gold converter">
@@ -49010,6 +49010,7 @@ TibiaTome.com"/>
 	</item>
 	<item id="25759" article="a" name="royal star">
 		<attribute key="primarytype" value="distance weapons"/>
+		<attribute key="weaponType" value="distance"/>	
 		<attribute key="shootType" value="royalstar"/>
 		<attribute key="elementfire" value="2"/>
 		<attribute key="maxhitchance" value="100"/>
@@ -57335,6 +57336,7 @@ TibiaTome.com"/>
 	</item>
 	<item id="30395" name="cobra club">
 		<attribute key="primarytype" value="club weapons"/>
+		<attribute key="weaponType" value="club"/>
 		<attribute key="elementfire" value="44"/>
 		<attribute key="skillclub" value="2"/>
 		<attribute key="attack" value="8"/>
@@ -57357,6 +57359,7 @@ TibiaTome.com"/>
 	</item>
 	<item id="30396" name="cobra axe">
 		<attribute key="primarytype" value="axe weapons"/>
+		<attribute key="weaponType" value="axe"/>
 		<attribute key="elementice" value="44"/>
 		<attribute key="skillaxe" value="2"/>
 		<attribute key="attack" value="8"/>
@@ -57402,6 +57405,7 @@ TibiaTome.com"/>
 	</item>
 	<item id="30398" name="cobra sword">
 		<attribute key="primarytype" value="sword weapons"/>
+		<attribute key="weaponType" value="sword"/>
 		<attribute key="skillsword" value="3"/>
 		<attribute key="attack" value="52"/>
 		<attribute key="extradef" value="2"/>
@@ -57721,6 +57725,7 @@ TibiaTome.com"/>
 	<item id="30973" article="a" name="bundle of reed"/>
 	<item id="30974" article="a" name="reed"/>
 	<item id="30975" article="a" name="bunch of reed">
+		<attribute key="primarytype" value="grass"/>		
 		<attribute key="weight" value="550"/>
 	</item>
 	<item id="30976" article="a" name="reed"/>
@@ -64165,7 +64170,7 @@ TibiaTome.com"/>
 		<attribute key="absorbpercentdeath" value="7"/>
 		<attribute key="skilldist" value="4"/>
 		<attribute key="criticalhitdamage" value="1000"/>
-		<attribute key="criticalhitdamage" value="1000"/>
+		<attribute key="criticalhitchance" value="1000"/>
 		<attribute key="hitchance" value="6"/>
 		<attribute key="range" value="6"/>
 		<attribute key="attack" value="9"/>
@@ -64192,7 +64197,7 @@ TibiaTome.com"/>
 		<attribute key="absorbpercentdeath" value="12"/>
 		<attribute key="magiclevelpoints" value="5"/>
 		<attribute key="criticalhitdamage" value="1000"/>
-		<attribute key="criticalhitdamage" value="1000"/>
+		<attribute key="criticalhitchance" value="1000"/>
 		<attribute key="range" value="6"/>
 		<attribute key="weight" value="1900"/>
 		<attribute key="imbuementslot" value="2">
@@ -75034,7 +75039,20 @@ Granted by TibiaGoals.com"/>
 		<attribute key="description" value="It has a turquoise shimmer and was made from a real scarab shell."/>
 		<attribute key="absorbpercentearth" value="2"/>
 		<attribute key="weight" value="120"/>
+		<attribute key="script" value="moveevent">
+			<attribute key="slot" value="ammo"/>
+		</attribute>		
 	</item>
+	<item id="43863" article="a" name="conch shell horn">
+		<attribute key="primarytype" value="light sources"/>
+		<attribute key="showAttributes" value="1"/>
+		<attribute key="description" value="It was made from a conch shell and shimmers in the colour of the moon."/>
+		<attribute key="absorbpercentice" value="2"/>
+		<attribute key="weight" value="120"/>
+		<attribute key="script" value="moveevent">
+			<attribute key="slot" value="ammo"/>
+		</attribute>			
+	</item>	
 	<item id="43665" article="a" name="dead elder bloodjaw">
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="60"/>
@@ -75294,7 +75312,7 @@ Granted by TibiaGoals.com"/>
 		<attribute key="slotType" value="two-handed"/>
 		<attribute key="elementenergy" value="50"/>
 		<attribute key="criticalhitdamage" value="1200"/>
-		<attribute key="criticalhitdamage" value="1000"/>
+		<attribute key="criticalhitchance" value="1000"/>
 		<attribute key="attack" value="8"/>
 		<attribute key="defense" value="35"/>
 		<attribute key="skillsword" value="5"/>
@@ -75731,6 +75749,108 @@ Granted by TibiaGoals.com"/>
 		<attribute key="primarytype" value="valuables"/>
 		<attribute key="weight" value="20"/>
 	</item>
+	<item id="44030" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44033"/>
+	</item>
+	<item id="44033" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44030"/>
+	</item>
+	<item id="44032" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44035"/>
+	</item>
+	<item id="44035" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44032"/>
+	</item>
+	<item id="44031" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44034"/>
+	</item>
+	<item id="44034" article="a" name="mask of the defiler">
+		<attribute key="description" value="A dark and mystic aura surrounds this sculpture.."/>
+		<attribute key="wrapableto" value="23398"/>
+		<attribute key="rotateto" value="44031"/>
+	</item>
+	<item id="44051" article="a" name="duality doll">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents two different dimensions of Tibia. Are you a Charlover? Or a killer? Anything is possible."/>
+		<attribute key="weight" value="2105"/>
+	</item>
+	<item id="44053" article="a" name="duality doll">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents two different dimensions of Tibia. Are you a Charlover? Or a killer? Anything is possible."/>
+		<attribute key="weight" value="2105"/>
+		<attribute key="duration" value="2"/>
+		<attribute key="decayto" value="44052"/>
+	</item>
+	<item id="44052" article="a" name="duality doll">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents two different dimensions of Tibia. Are you a Charlover? Or a killer? Anything is possible."/>
+		<attribute key="weight" value="2105"/>
+	</item>
+	<item id="44054" article="a" name="duality doll">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents two different dimensions of Tibia. Are you a Charlover? Or a killer? Anything is possible."/>
+		<attribute key="weight" value="2105"/>
+		<attribute key="duration" value="2"/>
+		<attribute key="decayto" value="44051"/>
+	</item>
+	<item id="44055" article="a" name="the dragon spirit">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents the spirit of your first dragon. Granted by Intibia.com"/>
+		<attribute key="weight" value="2602"/>
+	</item>
+	<item id="44057" article="a" name="the dragon spirit">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents the spirit of your first dragon. Granted by Intibia.com"/>
+		<attribute key="weight" value="2602"/>
+		<attribute key="duration" value="2"/>
+		<attribute key="decayto" value="44056"/>
+	</item>
+	<item id="44056" article="a" name="the dragon spirit">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents the spirit of your first dragon. Granted by Intibia.com"/>
+		<attribute key="weight" value="2602"/>
+	</item>
+	<item id="44058" article="a" name="the dragon spirit">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="It represents the spirit of your first dragon. Granted by Intibia.com"/>
+		<attribute key="weight" value="2602"/>
+		<attribute key="duration" value="2"/>
+		<attribute key="decayto" value="44055"/>
+	</item>
+	<item id="44059" article="a" name="aylie">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="She fights injustice with kindness in any kingdom, glowing with her light and knowledge throughout all of Tibia. Awarded by TibiaTales.com."/>
+		<attribute key="weight" value="1206"/>
+	</item>
+	<item id="44061" article="a" name="aylie">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="She fights injustice with kindness in any kingdom, glowing with her light and knowledge throughout all of Tibia. Awarded by TibiaTales.com."/>
+		<attribute key="weight" value="1206"/>
+		<attribute key="duration" value="3"/>
+		<attribute key="decayto" value="44060"/>
+	</item>
+	<item id="44060" article="a" name="aylie">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="She fights injustice with kindness in any kingdom, glowing with her light and knowledge throughout all of Tibia. Awarded by TibiaTales.com."/>
+		<attribute key="weight" value="1206"/>
+	</item>
+	<item id="44062" article="a" name="aylie">
+		<attribute key="primarytype" value="fansite items"/>
+		<attribute key="description" value="She fights injustice with kindness in any kingdom, glowing with her light and knowledge throughout all of Tibia. Awarded by TibiaTales.com."/>
+		<attribute key="weight" value="1206"/>
+		<attribute key="duration" value="3"/>
+		<attribute key="decayto" value="44059"/>
+	</item>		
 	<item id="43902" article="a" name="crack">
 		<attribute key="description" value="You see to be able to fit through there" />
 	</item>
